@@ -2,7 +2,7 @@
 
 
 sampleDict = { 
-   "class":{ 
+   "class":{
       "student":{ 
          "name":"Mike",
          "marks":{ 
@@ -13,6 +13,7 @@ sampleDict = {
    }
 }
 
+print(sampleDict[marks][[2])
 
 
 
