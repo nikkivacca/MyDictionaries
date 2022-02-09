@@ -1,6 +1,9 @@
 # 1) print out the value for the key 'history' using the dictionary below
 
 
+from unicodedata import name
+
+
 sampleDict = { 
    "class":{
       "student":{ 
@@ -13,7 +16,8 @@ sampleDict = {
    }
 }
 
-print(sampleDict[marks][[2])
+history_grade= sampleDict["class"]["student"]["marks"]["history"]
+print(history_grade)
 
 
 
@@ -21,8 +25,9 @@ print(sampleDict[marks][[2])
 
 dict={"son's name": "Lucas", "son's eyes": "green", "son's height": 32, "son's weight": 25}
 
-
-
+print(dict)
+dict["son's height"] = 34
+print(dict)
 
 
 # 3) Given a Python dictionary, Change Brad’s salary to 8500
@@ -33,8 +38,9 @@ sampleDict = {
      'emp3': {'name': 'Brad', 'salary': 6500}
 }
 
-
-
+print(sampleDict)
+sampleDict["emp3"]['salary']= 8500
+print(sampleDict)
 
 
 
@@ -43,4 +49,6 @@ sampleDict = {
 
 dict={"name": "Plato", "country": "Ancient Greece", "born": -427, "teacher": "Socrates", "student": "Aristotle"}
 
-
+print(dict)
+dict["work"]= ["Apology", "Phaedo", "Republic", "Symposium"]
+print(dict)
