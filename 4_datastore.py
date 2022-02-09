@@ -47,3 +47,19 @@ datastore = { "medical":[
 
       ]
 }
+
+
+'''
+outfile = open('retailspace.csv', 'w')
+
+for record in datastore["medical"]:
+  outfile.write(datastore["medical"]["room-number"])
+  outfile.write(datastore["medical"]["use"])
+  outfile.write(datastore["medical"]["sq-ft"])
+  outfile.write(datastore["medical"]["price"])
+
+
+outfile.cose()
+
+
+''' 
