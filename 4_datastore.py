@@ -14,9 +14,8 @@ room-number,use,sq-ft,price
 104,office,150,100
 
 '''
-
-
-
+## has one key and the value for the key is a list with 5 elements 
+## each element is a dictionary 
 
 datastore = { "medical":[
       { "room-number": 100,
@@ -49,17 +48,14 @@ datastore = { "medical":[
 }
 
 
-'''
-outfile = open('retailspace.csv', 'w')
+outfile = open('retail_space.csv', 'w')
+outfile.write('room-number,use,sq-ft,price\n')
 
 for record in datastore["medical"]:
-  outfile.write(datastore["medical"]["room-number"])
-  outfile.write(datastore["medical"]["use"])
-  outfile.write(datastore["medical"]["sq-ft"])
-  outfile.write(datastore["medical"]["price"])
+  outfile.write(
+    str(record["room-number"]) + ',' + (record["use"])
+  + ',' + str(record["sq-ft"]) + ',' + str(record["price"]) + '\n')
 
 
-outfile.cose()
+outfile.close()
 
-
-''' 
