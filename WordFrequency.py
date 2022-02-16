@@ -1,26 +1,23 @@
 
-def main():
-    outfile = "AI.txt"
-    data = word_count(outfile)
-    display(data)
+text = open('AI.txt', 'r')
 
-def word_count(outfile):
-    data = []
-    file = open(outfile, 'r')
-    lines = file.readlines()
-    for line in lines:
-        words = line.split()
-        for word in words:
-            if word in data:
-                data[word] += 1 
-            else:
-                data[word] = 1
-    return data 
+dictionary = []
 
-def display(data):
-    for key in data:
-        print(key, ' ', data[key])
+for line in text:
+    line = line.strip()
+    line = line.lower()
+    words = line.split(' ')
+
+    for word in words:
+        if word in dictionary:
+            dictionary[word]+= int(1)
+        else:
+            dictionary[word]= int(1)
 
 
+for key in dictionary:
+    print(key, ': ', dictionary[key])
 
-main()
+print(dictionary)
+
+text.close()
