@@ -1,23 +1,12 @@
 
+
 def main():
     infile = open('WorldSeriesWinners.txt', 'r')
-    winner = infile.readlines()
-    infile.close()
-    team =input('Enter the name of the team: ')
-    counter = 0 
-    
-    for team in winner:
-        if team == winner:
-            result  = counter + 1
-
-            if result == 1:
-                print('The', team, "won the world series", result, "times between 1903 and 2009")
-            elif result > 1:
-                print('The', team, "won the world series", result, "times between 1903 and 2009")
-            else:
-                print('The', team, 'never won the world series')
-
+    champions, number = make_dictionary(infile)
+    questions(champions, number)
+      
 main() 
+
 
 def make_dictionary(infile):
     champions = []
@@ -39,3 +28,14 @@ def make_dictionary(infile):
     
     print(number, '\n')
     return champions, number
+
+
+def questions(champions, number):
+    year = int(input('Enter a year to know which team won the World Series in the year:'))
+    if year > 1902 and year < 2010 and year != 1904 and year != 1994:
+        print(champions[year], 'won in the year', number[champions[year]], 'times')
+    elif year == 1904:
+        print('World Series not played in 1904')
+    elif year == 1994:
+        print('Word Series not played in 1994')
+
