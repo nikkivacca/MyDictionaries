@@ -16,3 +16,26 @@ def main():
                 print('The', team, "won the world series", result, "times between 1903 and 2009")
             else:
                 print('The', team, 'never won the world series')
+
+main() 
+
+def make_dictionary(infile):
+    champions = []
+    line = infile.readline().rstrip('\n')
+
+    for i in range(1903,2008):
+        champions[i] = line 
+        line = infile.readline().rstrip('\n')
+    
+    print(champions, '\n')
+
+    number = []
+    for i in range (1903,2008):
+        team = champions[i]
+        if not team in number:
+            number[team] =1 
+        else: 
+            number[team] += 1
+    
+    print(number, '\n')
+    return champions, number
