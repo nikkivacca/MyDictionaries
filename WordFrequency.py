@@ -12,7 +12,7 @@ for line in text:
         if word in dictionary:
             dictionary[word]+= int(1)
         else:
-            dictionary[word]= int(1)
+            dictionary[word] = int(1)
 
 
 for key in dictionary:
